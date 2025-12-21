@@ -5,15 +5,36 @@ import "./Welcome.css";
 import snoopyImg from "./assets/hello.png";
 
 const Welcome = ({ onNext }) => {
-  const [input, setInput] = useState("");
-  const correctName = "Gamin";
-  const [error, setError] = useState(false);
+  const [userNameInput, setUserNameInput] = useState("");
+  const [partnerNameInput, setPartnerNameInput] = useState("");
 
   function handleSubmit() {
-    if (input.trim() === correctName) {
-      onNext();
+    const correctUserNameArray = ["Gamin", "gamin", "鄭佳旻", "佳旻"];
+    const correctParnerNameArray = [
+      "Leonard Ian",
+      "leonard ian",
+      "Ian",
+      "ian",
+      "Leonard",
+      "leonard",
+    ];
+
+    const isUserNameCorrect = correctUserNameArray.includes(
+      userNameInput.trim(),
+    );
+    const isPartnerNameCorrect = correctParnerNameArray.includes(
+      partnerNameInput.trim(),
+    );
+
+    if (
+      partnerNameInput.trim() === "楊咩咩" ||
+      partnerNameInput.trim() === "羊咩咩"
+    ) {
+      alert("😡😡😡");
+    } else if (!isUserNameCorrect || !isPartnerNameCorrect) {
+      alert("Please try again!");
     } else {
-      setError(true);
+      onNext();
     }
   }
 
@@ -42,46 +63,73 @@ const Welcome = ({ onNext }) => {
               Hello!
             </motion.div>
 
-            <motion.div
-              className="welcome-text"
-              initial={{ opacity: 0, y: 50 }}
-              animate={{
-                opacity: 1,
-                y: 0,
-                transition: { delay: 2, duration: 0.8 },
-              }}
-            >
-              Please enter your name
-            </motion.div>
+            <div className="inputs-container">
+              <motion.div
+                className="input-container"
+                initial={{ opacity: 0, y: 50 }}
+                animate={{
+                  opacity: 1,
+                  y: 0,
+                  transition: { delay: 2, duration: 0.8 },
+                }}
+              >
+                <div className="input-entry-area">
+                  <input
+                    type="text"
+                    required
+                    value={userNameInput}
+                    onChange={(e) => {
+                      setUserNameInput(e.target.value);
+                    }}
+                  ></input>
+                  <div className="input-labelline">Enter your name</div>
+                </div>
+              </motion.div>
 
-            <motion.input
-              type="text"
-              placeholder="Your name"
-              value={input}
-              onChange={(e) => {
-                setInput(e.target.value);
-                setError(false);
-              }}
-              initial={{ opacity: 0, y: 50 }}
-              animate={{
-                opacity: 1,
-                y: 0,
-                transition: { delay: 2, duration: 0.8 },
-              }}
-            ></motion.input>
-
-            {error && <div>Incorrect Name</div>}
+              <motion.div
+                className="input-container"
+                initial={{ opacity: 0, y: 50 }}
+                animate={{
+                  opacity: 1,
+                  y: 0,
+                  transition: { delay: 2, duration: 0.8 },
+                }}
+              >
+                <div className="input-entry-area">
+                  <input
+                    type="text"
+                    required
+                    value={partnerNameInput}
+                    onChange={(e) => {
+                      setPartnerNameInput(e.target.value);
+                    }}
+                  ></input>
+                  <div className="input-labelline">
+                    Enter your partner's name
+                  </div>
+                </div>
+              </motion.div>
+            </div>
 
             <motion.button
+              className="submit-button"
               onClick={handleSubmit}
-              initial={{ opacity: 0, y: 50 }}
+              initial={{ opacity: 0, y: 50, scale: 0 }}
               animate={{
                 opacity: 1,
                 y: 0,
-                transition: { delay: 2, duration: 0.8 },
+                scale: 1,
+                transition: {
+                  delay: 3,
+                  duration: 0.2,
+                  type: "spring",
+                  stiffness: 100,
+                  damping: 10,
+                },
               }}
+              whileTap={{ scale: 0.95 }}
             >
-              Next page
+              Submit
             </motion.button>
           </motion.div>
         </div>
