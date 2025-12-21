@@ -1,0 +1,32 @@
+.introduction-page-container {
+  background-color: #f3deca;
+  color: #141850;
+  height: 100vh;
+  padding: 20px;
+}
+
+.introduction-title {
+  font-size: 48px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 50px;
+}
+
+.introduction-body {
+  font-size: 20px;
+  color: black;
+  margin-top: 20px;
+}
+
+.introduction-submit-button {
+  cursor: pointer;
+  border: none;
+  width: 100%;
+  height: 40px;
+  margin-top: 20px;
+  font-size: 20px;
+  background-color: #fa9483;
+  color: black;
+  border-radius: 6px;
+  box-shadow: 0 2px 2px #f3deca;
+}

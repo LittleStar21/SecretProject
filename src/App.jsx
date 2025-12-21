@@ -1,27 +1,30 @@
 import { useEffect, useState } from "react";
 import Welcome from "./Pages/Welcome";
+import IntroductionPage from "./Pages/IntroductionPage";
 import MainPage from "./Pages/MainPage";
+
 import "./App.css";
 
 const App = () => {
   /**
    * 0: Input your name
-   * 1: Memories
-   * 2: Things I like about you
+   * 1: Introduction
+   * 2: Main Page
    * 3: Ask her out
    */
   const [currentPage, setCurrentPage] = useState(0);
 
-  useEffect(() => {
-    console.log(currentPage);
-  }, [currentPage]);
+  useEffect(() => {}, [currentPage]);
 
   return (
     <div className="my-app">
       {currentPage === 0 && (
         <Welcome onNext={() => setCurrentPage(1)}></Welcome>
       )}
-      {currentPage === 1 && <MainPage></MainPage>}
+      {currentPage === 1 && (
+        <IntroductionPage onNext={() => setCurrentPage(2)}></IntroductionPage>
+      )}
+      {currentPage === 2 && <MainPage></MainPage>}
     </div>
   );
 };

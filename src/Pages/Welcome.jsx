@@ -8,7 +8,7 @@ const Welcome = ({ onNext }) => {
   const [userNameInput, setUserNameInput] = useState("");
   const [partnerNameInput, setPartnerNameInput] = useState("");
 
-  function handleSubmit() {
+  const handleSubmit = () => {
     const correctUserNameArray = ["Gamin", "gamin", "鄭佳旻", "佳旻"];
     const correctParnerNameArray = [
       "Leonard Ian",
@@ -36,7 +36,7 @@ const Welcome = ({ onNext }) => {
     } else {
       onNext();
     }
-  }
+  };
 
   return (
     <div>
