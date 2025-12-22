@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import "./Welcome.css";
 
 import snoopyImg from "./assets/hello.png";
+import snoopyHugImg from "./assets/test.png";
 
 const Welcome = ({ onNext }) => {
   const [userNameInput, setUserNameInput] = useState("");
@@ -92,7 +93,7 @@ const Welcome = ({ onNext }) => {
                 animate={{
                   opacity: 1,
                   y: 0,
-                  transition: { delay: 2, duration: 0.8 },
+                  transition: { delay: 3, duration: 0.8 },
                 }}
               >
                 <div className="input-entry-area">
@@ -111,6 +112,22 @@ const Welcome = ({ onNext }) => {
               </motion.div>
             </div>
 
+            <motion.div
+              className="snoopy-hug-img-container"
+              initial={{ opacity: 0, y: 50 }}
+              animate={{
+                opacity: 1,
+                y: 0,
+                transition: { delay: 4, duration: 0.8 },
+              }}
+            >
+              <img
+                className="snoopy-hug-img"
+                src={snoopyHugImg}
+                alt="test-img"
+              ></img>
+            </motion.div>
+
             <motion.button
               className="submit-button"
               onClick={handleSubmit}
@@ -120,11 +137,8 @@ const Welcome = ({ onNext }) => {
                 y: 0,
                 scale: 1,
                 transition: {
-                  delay: 3,
+                  delay: 5,
                   duration: 0.2,
-                  type: "spring",
-                  stiffness: 100,
-                  damping: 10,
                 },
               }}
               whileTap={{ scale: 0.95 }}

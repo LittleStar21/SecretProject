@@ -126,6 +126,19 @@ input:valid + .input-labelline {
   z-index: 3;
 }
 
+.snoopy-hug-img-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.snoopy-hug-img {
+  width: 120px;
+  height: auto;
+  margin-top: 30px;
+}
+
 .submit-button {
   position: absolute;
   bottom: 20px;

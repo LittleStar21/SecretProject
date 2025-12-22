@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Welcome from "./Pages/Welcome";
 import IntroductionPage from "./Pages/IntroductionPage";
 import MainPage from "./Pages/MainPage";
@@ -12,9 +12,7 @@ const App = () => {
    * 2: Main Page
    * 3: Ask her out
    */
-  const [currentPage, setCurrentPage] = useState(0);
-
-  useEffect(() => {}, [currentPage]);
+  const [currentPage, setCurrentPage] = useState(2);
 
   return (
     <div className="my-app">
@@ -24,7 +22,9 @@ const App = () => {
       {currentPage === 1 && (
         <IntroductionPage onNext={() => setCurrentPage(2)}></IntroductionPage>
       )}
-      {currentPage === 2 && <MainPage></MainPage>}
+      {currentPage === 2 && (
+        <MainPage onNext={() => setCurrentPage(3)}></MainPage>
+      )}
     </div>
   );
 };
