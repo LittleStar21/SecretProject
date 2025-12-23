@@ -1,210 +1,142 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import "./WhyILikeYou.css";
 
 const WhyILikeYou = ({ onBackButtonClicked }) => {
   const [step, setStep] = useState(0);
-  const [error, setError] = useState(false);
 
-  // Total steps in the quest
-  const totalSteps = 3;
-  const progress = (step / (totalSteps - 1)) * 100;
-
-  const handleNextStep = () => {
-    setError(false);
-    setStep((prev) => prev + 1);
-  };
-
-  const triggerError = () => {
-    setError(true);
-    // Brief shake animation effect could go here
-  };
+  const questSteps = [
+    {
+      title: "First Impression",
+      reason:
+        "第一次見到妳的時候，對我來說就像是看到天使一樣。那種震撼和美感，我到現在都還清晰地記得。",
+      icon: "😇",
+    },
+    {
+      title: "Your Hair",
+      reason:
+        "我喜歡妳的頭髮，看著妳整理頭髮或是隨風飄動的樣子，總覺得很有魅力。",
+      icon: "💇‍♀️",
+    },
+    {
+      title: "The Perfect Smile",
+      reason:
+        "妳笑起來真的非常漂亮，特別是在吃蛋糕的時候，或者是看到我踩到狗屎的時候（雖然很壞但我喜歡妳笑得那麼開心）。",
+      icon: "🍰",
+    },
+    {
+      title: "Our Walks",
+      reason: "我喜歡在散步時牽著妳的手，那種掌心的溫度讓我覺得很踏實。",
+      icon: "👫",
+    },
+    {
+      title: "Glasses Look",
+      reason: "妳戴眼鏡的樣子真的很可愛，有一種特別的反差萌，我很喜歡。",
+      icon: "👓",
+    },
+    {
+      title: "Your Voice",
+      reason: "妳的聲音很好聽，聽妳說話對我來說是一種享受，總覺得甜甜的。",
+      icon: "🔊",
+    },
+    {
+      title: "Your Patience",
+      reason:
+        "謝謝妳願意等我。我知道妳在戀愛方面的經驗比我豐富，但妳願意配合我緩慢的步調，這對我意義重大。",
+      icon: "⏳",
+    },
+    {
+      title: "Pure Comfort",
+      reason: "每次跟妳聊天，我都覺得非常舒服且自在，好像可以跟妳說任何事情。",
+      icon: "💬",
+    },
+    {
+      title: "How You Care",
+      reason:
+        "妳總是很細心地照顧我，幫我整理眉毛、修鼻毛，還幫我買護唇膏，這些小細節都讓我感到被愛。",
+      icon: "🩹",
+    },
+    {
+      title: "A Great Listener",
+      reason: "妳會認真聽我說的每一句話，讓我感覺到自己的想法是有被重視的。",
+      icon: "👂",
+    },
+    {
+      title: "The 'Cat Lines'",
+      reason:
+        "我喜歡妳臉上鼻子旁邊那兩條線（笑紋），我覺得那是妳臉上最獨特、最可愛的地方。",
+      icon: "🐱",
+    },
+    {
+      title: "Your Scent",
+      reason: "妳身上有一種很好聞的味道，每次靠近妳都讓我感到很安心。",
+      icon: "🌸",
+    },
+    {
+      title: "Because It's You",
+      reason: "最後一個理由：因為妳就是妳，這就足夠了。",
+      icon: "💍",
+    },
+  ];
 
   return (
-    <div style={styles.pageWrapper}>
-      {/* Progress Bar */}
-      <div style={styles.progressBarContainer}>
-        <motion.div
-          initial={{ width: 0 }}
-          animate={{ width: `${progress}%` }}
-          style={styles.progressBar}
-        />
+    <div className="quest-page-container">
+      <div className="quest-header">
+        <button onClick={onBackButtonClicked} className="exit-btn">
+          ✕ EXIT
+        </button>
+        <div className="progress-bar-track">
+          <motion.div
+            className="progress-bar-fill"
+            animate={{ width: `${((step + 1) / questSteps.length) * 100}%` }}
+          />
+        </div>
+        <div className="step-counter">
+          {step + 1} / {questSteps.length}
+        </div>
       </div>
 
-      <button onClick={onBackButtonClicked} style={styles.backBtn}>
-        ← Exit Quest
-      </button>
-
-      <div style={styles.questContent}>
+      <div className="quest-content-area">
         <AnimatePresence mode="wait">
-          {/* STAGE 1: THE MEMORY TEST */}
-          {step === 0 && (
-            <motion.div
-              key="step1"
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -20 }}
-              style={styles.card}
-            >
-              <span style={styles.icon}>🔍</span>
-              <h2>Stage 1: The Memory Test</h2>
-              <p>
-                In our memories, what did I give a "满分" (perfect score) for?
-              </p>
+          <motion.div
+            key={step}
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -50 }}
+            className="quest-card"
+          >
+            <div className="level-tag">Reason #{step + 1}</div>
+            <div className="quest-icon">{questSteps[step].icon}</div>
+            <h2 className="quest-title">{questSteps[step].title}</h2>
+            <p className="reason-text">{questSteps[step].reason}</p>
 
-              <div style={styles.buttonGroup}>
-                <button style={styles.gameBtn} onClick={handleNextStep}>
-                  Walking to Tiger Head Hill
-                </button>
-                <button style={styles.gameBtn} onClick={triggerError}>
-                  Eating Sushi
-                </button>
-              </div>
-
-              {error && (
-                <motion.p
-                  animate={{ x: [-5, 5, -5, 5, 0] }}
-                  style={styles.errorText}
+            <div className="actions">
+              {step < questSteps.length - 1 ? (
+                <button
+                  className="next-discovery-btn"
+                  onClick={() => setStep(step + 1)}
                 >
-                  Try again! I know you remember! 😉
-                </motion.p>
+                  Approve
+                </button>
+              ) : (
+                <div className="completed-block">
+                  <p className="completion-msg">
+                    {questSteps.length} Reasons Unlocked! 🏆
+                  </p>
+                  <button
+                    className="finish-quest-btn"
+                    onClick={onBackButtonClicked}
+                  >
+                    Return to Main
+                  </button>
+                </div>
               )}
-            </motion.div>
-          )}
-
-          {/* STAGE 2: THE PERSONALITY TEST */}
-          {step === 1 && (
-            <motion.div
-              key="step2"
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -20 }}
-              style={styles.card}
-            >
-              <span style={styles.icon}>🧠</span>
-              <h2>Stage 2: The Truth</h2>
-              <p>
-                Which of these is the real reason I like spending time with you?
-              </p>
-
-              <div style={styles.buttonGroup}>
-                <button style={styles.gameBtn} onClick={handleNextStep}>
-                  Because you make every walk an adventure
-                </button>
-                <button style={styles.gameBtn} onClick={handleNextStep}>
-                  Because even looking at phones together is fun
-                </button>
-              </div>
-              <p style={styles.hint}>(Trick question: Both are true!)</p>
-            </motion.div>
-          )}
-
-          {/* STAGE 3: THE FINAL REWARD */}
-          {step === 2 && (
-            <motion.div
-              key="step3"
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              style={styles.card}
-            >
-              <span style={styles.icon}>🏆</span>
-              <h2>Quest Complete!</h2>
-              <p style={styles.finalText}>
-                I like you because you are patient with me, even when I'm
-                nervous, and because you've turned simple walks into my favorite
-                memories of 2025.
-              </p>
-              <motion.div
-                animate={{ rotate: [0, 10, -10, 10, 0], scale: [1, 1.1, 1] }}
-                transition={{ repeat: Infinity, duration: 2 }}
-                style={{ fontSize: "4rem", margin: "20px 0" }}
-              >
-                ❤️
-              </motion.div>
-              <button style={styles.gameBtn} onClick={() => setStep(0)}>
-                Play Again?
-              </button>
-            </motion.div>
-          )}
+            </div>
+          </motion.div>
         </AnimatePresence>
       </div>
     </div>
   );
-};
-
-// Simple internal styles for quick setup
-const styles = {
-  pageWrapper: {
-    minHeight: "100vh",
-    background: "#fff5f7",
-    padding: "20px",
-    fontFamily: "sans-serif",
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-  },
-  progressBarContainer: {
-    width: "100%",
-    maxWidth: "400px",
-    height: "8px",
-    background: "#ffdce3",
-    borderRadius: "10px",
-    marginBottom: "40px",
-    overflow: "hidden",
-  },
-  progressBar: {
-    height: "100%",
-    background: "#ff4d6d",
-  },
-  backBtn: {
-    alignSelf: "flex-start",
-    background: "none",
-    border: "none",
-    color: "#ff4d6d",
-    cursor: "pointer",
-    fontSize: "1rem",
-    fontWeight: "bold",
-  },
-  questContent: {
-    flex: 1,
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    width: "100%",
-  },
-  card: {
-    background: "white",
-    padding: "30px",
-    borderRadius: "24px",
-    boxShadow: "0 10px 25px rgba(255, 77, 109, 0.15)",
-    textAlign: "center",
-    maxWidth: "400px",
-    width: "100%",
-  },
-  icon: { fontSize: "3rem", display: "block", marginBottom: "10px" },
-  buttonGroup: {
-    display: "flex",
-    flexDirection: "column",
-    gap: "10px",
-    marginTop: "20px",
-  },
-  gameBtn: {
-    padding: "12px 20px",
-    borderRadius: "12px",
-    border: "none",
-    background: "#ff4d6d",
-    color: "white",
-    fontSize: "1rem",
-    cursor: "pointer",
-    transition: "transform 0.2s",
-  },
-  errorText: {
-    color: "#ff4d6d",
-    fontSize: "0.9rem",
-    marginTop: "10px",
-    fontWeight: "bold",
-  },
-  hint: { fontSize: "0.8rem", color: "#888", marginTop: "10px" },
-  finalText: { fontSize: "1.1rem", lineHeight: "1.6", color: "#444" },
 };
 
 export default WhyILikeYou;

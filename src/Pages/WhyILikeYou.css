@@ -1,0 +1,145 @@
+/* Container and Layout */
+.quest-page-container {
+  height: 100vh;
+  background-color: #2f5b64; /* Deep Teal */
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  font-family: "Inter", sans-serif;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Header & Progress */
+.quest-header {
+  width: 100%;
+  maxwidth: 500px;
+  margin: 0 auto 40px;
+}
+
+.exit-btn {
+  background: none;
+  border: none;
+  color: #f2eae3; /* Cream */
+  cursor: pointer;
+  margin-bottom: 10px;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  opacity: 0.8;
+}
+
+.progress-bar-track {
+  height: 4px;
+  background-color: #2d4057; /* Midnight Navy */
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background-color: #fa9483; /* Coral */
+}
+
+/* Card Content */
+.quest-content-area {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.quest-card {
+  background-color: #f2eae3; /* Cream */
+  width: 100%;
+  max-width: 380px;
+  padding: 40px 30px;
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  border-bottom: 6px solid #fa9483; /* Coral accent */
+}
+
+.level-tag {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #2f5b64;
+  margin-bottom: 20px;
+  font-weight: 800;
+}
+
+.quest-icon {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.quest-title {
+  font-size: 1.6rem;
+  color: #2d4057;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.reason-text {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #2f5b64;
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+/* Buttons */
+.next-discovery-btn {
+  width: 100%;
+  padding: 16px;
+  border-radius: 8px;
+  border: none;
+  background-color: #fa9483;
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.next-discovery-btn:active {
+  transform: scale(0.98);
+}
+
+.completed-block {
+  border-top: 1px solid rgba(45, 64, 87, 0.1);
+  padding-top: 20px;
+}
+
+.finish-quest-btn {
+  padding: 12px 24px;
+  border-radius: 8px;
+  border: 2px solid #2d4057;
+  background: none;
+  color: #2d4057;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.step-counter {
+  color: #f2eae3;
+  font-size: 0.8rem;
+  text-align: right;
+  margin-top: 5px;
+  font-weight: bold;
+  opacity: 0.7;
+}
+
+.completion-msg {
+  color: #2d4057;
+  font-weight: 800;
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+}
+
+.quest-card {
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}

@@ -175,7 +175,7 @@ const MemoriesPage = ({ onBackButtonClicked }) => {
       image: nineteenthImg,
       imageAlt: "nineteenth-img",
       description:
-        "Oi! 幹嘛那麼開心，有點忘記那天做了什麼，也不知道要寫什麼了哈哈哈",
+        "幹嘛那麼開心，有點忘記那天做了什麼，也不知道要寫什麼了哈哈。對了，謝謝你買給我唇膏。",
       happiness: 5,
     },
     {
@@ -190,8 +190,9 @@ const MemoriesPage = ({ onBackButtonClicked }) => {
       title: "2025/12/20 - 楊聰恩家",
       image: twentyFirstImg,
       imageAlt: "twenty-first-img",
-      description: "怎麼會忘記拍照呢？不愛了！",
-      happiness: 4,
+      description:
+        "騙我要玩switch，然後怎麼會忘記拍照呢？不愛了！可是謝謝你修了我的眉毛和鼻毛！我感受得到你的愛！",
+      happiness: 5,
     },
     {
       title: "2025/12/21 - 冬至送幸福給楊聰恩",
@@ -203,12 +204,17 @@ const MemoriesPage = ({ onBackButtonClicked }) => {
     },
   ];
 
+  // Preload all images
   useEffect(() => {
     memories.forEach((memory) => {
       if (memory.image) {
         const img = new Image();
         img.src = memory.image;
       }
+
+      const img = new Image();
+      img.src = pokemonImg;
+      img.src = xiaochouImg;
     });
   }, []);
 
