@@ -13,8 +13,8 @@
 /* Header & Progress */
 .quest-header {
   width: 100%;
-  maxwidth: 500px;
-  margin: 0 auto 40px;
+  max-width: 500px;
+  margin: 0 auto;
 }
 
 .exit-btn {
