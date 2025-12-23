@@ -1,32 +1,79 @@
-.introduction-page-container {
-  background-color: #f3deca;
-  color: #141850;
-  min-height: 100vh;
-  padding: 20px;
-}
-
-.introduction-title {
-  font-size: 48px;
-  font-weight: bold;
+.intro-container {
+  height: 100vh;
+  background-color: #2f5b64; /* Your Teal */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 30px;
+  overflow: hidden;
   text-align: center;
-  margin-top: 50px;
 }
 
-.introduction-body {
-  font-size: 20px;
-  color: black;
-  margin-top: 20px;
+/* Adds a soft focus glow around the edges */
+.intro-vignette {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle, transparent 20%, rgba(0, 0, 0, 0.3) 100%);
+  pointer-events: none;
 }
 
-.introduction-submit-button {
-  cursor: pointer;
-  border: none;
+.intro-content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 600px;
+  z-index: 1;
+}
+
+.intro-text-box {
+  color: #f2eae3; /* Your Cream */
+  font-size: 1.4rem;
+  line-height: 1.8;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+}
+
+.intro-footer {
   width: 100%;
-  height: 40px;
-  margin-top: 20px;
-  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  z-index: 1;
+  padding-bottom: 50px;
+}
+
+.intro-next-btn {
+  background-color: #fa9483; /* Your Coral */
+  color: white;
+  border: none;
+  padding: 12px 40px;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(250, 148, 131, 0.3);
+}
+
+.intro-pagination {
+  display: flex;
+  gap: 8px;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #f2eae3;
+  opacity: 0.3;
+  transition: all 0.3s ease;
+}
+
+.dot.active {
+  opacity: 1;
+  transform: scale(1.3);
   background-color: #fa9483;
-  color: black;
-  border-radius: 6px;
-  box-shadow: 0 2px 2px #f3deca;
 }

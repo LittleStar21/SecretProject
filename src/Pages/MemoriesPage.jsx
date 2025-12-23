@@ -98,7 +98,7 @@ const MemoriesPage = ({ onBackButtonClicked }) => {
       image: ninthImg,
       imageAlt: "ninth-img",
       description:
-        "有些時候我們也會不開心。對不起又讓你哭了，我希望以後能給你更多安心和快樂 (雖然我那時候想要推開我😡)",
+        "有些時候我們也會不開心。對不起又讓你哭了，我希望以後能給你更多安心和快樂 (雖然你那時候想要推開我😡)",
       happiness: 3,
     },
     {
@@ -236,7 +236,7 @@ const MemoriesPage = ({ onBackButtonClicked }) => {
           opacity: 1,
           y: 0,
           transition: {
-            duration: 2,
+            duration: 1,
             ease: "easeOut",
             delay: 0.5,
           },
@@ -341,14 +341,51 @@ const MemoriesPage = ({ onBackButtonClicked }) => {
             </motion.div>
           </div>
         ) : (
-          <div className="final-image">
-            <div className="final-title">
-              Congratulation! You just got a new boyfriend!
+          <motion.div
+            className="final-container"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
+            <div className="final-card-wrapper">
+              <motion.div
+                className="floating-heart"
+                animate={{
+                  y: [0, -20, 0],
+                  rotate: [0, 5, -5, 0],
+                }}
+                transition={{ duration: 3, repeat: Infinity }}
+              >
+                ❤️
+              </motion.div>
+
+              <h1 className="final-title">SUCCESS!</h1>
+              <h2 className="final-subtitle">妳現在有一位新男友了！</h2>
+
+              <div className="final-stats-box">
+                <div className="stat-item">
+                  <span className="label">男朋友：</span>
+                  <span className="value">楊聰恩</span>
+                </div>
+                <div className="stat-item">
+                  <span className="label">女朋友：</span>
+                  <span className="value">鄭佳旻</span>
+                </div>
+                <div className="stat-divider" />
+                <div className="stat-date">Established: 2025.12.24</div>
+              </div>
+
+              <p className="final-message">
+                謝謝妳答應我。我會努力當一個讓妳驕傲、讓妳快樂的男友。
+                <br />
+                未來的每一頁，我們一起寫。
+              </p>
+
+              <button className="final-back-btn" onClick={onBackButtonClicked}>
+                Go Back
+              </button>
             </div>
-            <button className="back-button" onClick={onBackButtonClicked}>
-              Go back
-            </button>
-          </div>
+          </motion.div>
         )}
       </AnimatePresence>
     </div>

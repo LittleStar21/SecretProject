@@ -1,0 +1,64 @@
+.chat-page-container {
+  min-height: 100vh;
+  background-color: #2f5b64;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.chat-title {
+  color: white;
+}
+
+.choices-grid {
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.choice-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.choice-card {
+  background-color: #f2eae3; /* Cream */
+  border: 2px solid transparent;
+  padding: 18px;
+  border-radius: 15px;
+  color: #2d4057;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.3s ease;
+}
+
+.choice-card.selected {
+  border-color: #fa9483; /* Coral */
+  background-color: #e8ded4;
+}
+
+.my-response-bubble {
+  background-color: #fa9483; /* Coral */
+  color: white;
+  padding: 12px 18px;
+  border-radius: 15px;
+  border-top-left-radius: 2px;
+  align-self: flex-start;
+  font-size: 0.95rem;
+  margin-left: 20px;
+  max-width: 85%;
+  line-height: 1.4;
+}
+
+.chat-footer {
+  margin-top: 40px;
+  color: #f2eae3;
+  font-style: italic;
+}

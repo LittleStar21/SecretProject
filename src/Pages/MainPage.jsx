@@ -1,19 +1,21 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import "./MainPage.css";
 
 import fotoBerduaImg from "./assets/foto_berdua.jpg";
+import fengMingImg from "./assets/fengming.jpg";
 import sushiDateImg from "./assets/first_park.jpg";
 import fotoCallImg from "./assets/foto_call.png";
 
-import "./MainPage.css";
 import WhyILikeYou from "./WhyILikeYou";
+import WhyYouLikeMe from "./WhyYouLikeMe";
 import MemoriesPage from "./MemoriesPage";
+import MorePage from "./MorePage";
 
 const MainPage = () => {
   // 0: Main Hub
   // 1: Why I like you
   // 2: Memories
-  // 3: Secret
   const [currentState, setCurrentState] = useState(0);
 
   useEffect(() => {
@@ -24,12 +26,16 @@ const MainPage = () => {
     setCurrentState(1);
   };
 
-  const memoriesButtonCallback = () => {
+  const whyYouLikeMeButtonCallback = () => {
     setCurrentState(2);
   };
 
-  const moreButtonCallback = () => {
+  const memoriesButtonCallback = () => {
     setCurrentState(3);
+  };
+
+  const moreButtonCallback = () => {
+    setCurrentState(4);
   };
 
   const cards = [
@@ -41,7 +47,14 @@ const MainPage = () => {
       buttonCallback: whyILikeYouButtonCallback,
     },
     {
-      title: "Memories",
+      title: "What You Like about Me",
+      image: fengMingImg,
+      imageAlt: "foto-berdua-img",
+      description: null,
+      buttonCallback: whyYouLikeMeButtonCallback,
+    },
+    {
+      title: "Our Memories",
       image: sushiDateImg,
       imageAlt: "sushi-date-img",
       description: null,
@@ -123,9 +136,17 @@ const MainPage = () => {
         ></WhyILikeYou>
       )}
       {currentState === 2 && (
+        <WhyYouLikeMe
+          onBackButtonClicked={() => setCurrentState(0)}
+        ></WhyYouLikeMe>
+      )}
+      {currentState === 3 && (
         <MemoriesPage
           onBackButtonClicked={() => setCurrentState(0)}
         ></MemoriesPage>
+      )}
+      {currentState === 4 && (
+        <MorePage onBackButtonClicked={() => setCurrentState(0)}></MorePage>
       )}
     </div>
   );
