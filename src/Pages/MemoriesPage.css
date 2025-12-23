@@ -63,8 +63,66 @@
 
 .memories-card-happiness {
   display: flex;
+  align-items: center;
+  position: absolute;
+  bottom: 10px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.final-message-card {
+  position: relative;
+  background-color: #f2eae3;
+  height: 450px;
+  width: 260px;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 20px;
+  border-radius: 15px;
+  text-align: center;
+}
+
+.final-message-button {
   position: absolute;
   bottom: 20px;
-  font-weight: bold;
-  margin-top: 25px;
+  cursor: pointer;
+  border: none;
+  width: 60%;
+  height: 40px;
+  font-size: 20px;
+  background-color: #fa9483;
+  color: black;
+  border-radius: 6px;
+  box-shadow: 0 2px 2px #f3deca;
+}
+
+.final-message-button-2 {
+  position: absolute;
+  bottom: 70px;
+  cursor: pointer;
+  border: none;
+  width: 60%;
+  height: 40px;
+  font-size: 20px;
+  background-color: #fa9483;
+  color: black;
+  border-radius: 6px;
+  box-shadow: 0 2px 2px #f3deca;
+}
+
+.back-button {
+  cursor: pointer;
+  border: none;
+  width: 40%;
+  margin-top: 20px;
+  margin-left: 50%;
+  transform: translateX(-60%);
+  height: 40px;
+  font-size: 20px;
+  background-color: #fa9483;
+  color: black;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px #f3deca;
 }

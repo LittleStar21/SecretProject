@@ -24,6 +24,8 @@ import nineteenthImg from "./assets/memories/nineteenth-photo.jpg";
 import twentiethImg from "./assets/memories/twentieth-photo.jpg";
 import twentyFirstImg from "./assets/memories/twenty-first-photo.jpg";
 import twentySecondImg from "./assets/memories/twenty-second-photo.jpg";
+import pokemonImg from "./assets/memories/gamin-pokemon-photo.jpg";
+import xiaochouImg from "./assets/memories/xiaochou-photo.jpg";
 
 const MemoriesPage = ({ onBackButtonClicked }) => {
   const [index, setIndex] = useState(0);
@@ -33,21 +35,23 @@ const MemoriesPage = ({ onBackButtonClicked }) => {
       image: sushiDateImg,
       imageAlt: "sushi-date-img",
       description:
-        "這是我們第一次見面。我那時候都很緊張，不知道該說什麼該做什麼，但我都很開心。",
+        "這是我們第一次見面。我那時候真的很緊張，不知道該說什麼、該做什麼，但只要跟你在一起，我就覺得很開心。",
       happiness: 5,
     },
     {
       title: "2025/11/7 - 看電影 (鬼童伴) - 桃園",
       image: moviesImg,
       imageAlt: "watch-movie-img",
-      description: "電影雖然有點爛，但是我緊張死了(110 bpm都怪你)。",
+      description:
+        "這是我第一次跟女生兩個人一起看電影。我覺得電影其實普普通通，但那天我緊張到心跳110 bpm。都怪你！",
       happiness: 4,
     },
     {
       title: "2025/11/13 - 旅人咖啡館 - 桃園店",
       image: thirdImg,
       imageAlt: "cafe-img",
-      description: '"你的女朋友不是浪漫的人..."',
+      description:
+        '我本來是想要和他一起撐一把傘。但是她忽然拿出來自己的傘。"你喜歡的人不是浪漫的人。"',
       happiness: 4,
     },
     {
@@ -55,21 +59,23 @@ const MemoriesPage = ({ onBackButtonClicked }) => {
       image: fourthImg,
       imageAlt: "fourth-img",
       description:
-        "感謝你來板橋找我，看得出來你很累。你那天要是沒來我可能會考慮一些事 (開玩笑的)",
+        "感謝你特地來板橋找我。我知道你很累，但你還是來了。那天我真的很珍惜。你那天要是沒來我可能會考慮一些事 (開玩笑的)",
       happiness: 5,
     },
     {
       title: "2025/11/19 - 鳳鳴",
       image: fifthImg,
       imageAlt: "fifth-img",
-      description: "嗯，你很漂亮",
+      description:
+        "那天我心裡只有一個想法：嗯，你真的很漂亮，他是真的喜歡我嗎？感覺我不是她的level...",
       happiness: 5,
     },
     {
       title: "2025/11/20 - 石二鍋/耶誕城 - 板橋",
       image: sixthImg,
       imageAlt: "sixth-img",
-      description: "我覺得我們真的需要多點問別人幫忙拍照。他們拍的很好看",
+      description:
+        "那天拍了很多照片。後來發現只要是跟你一起，怎麼拍都好看。我覺得我們真的需要多點問別人幫忙拍照。他們拍的很好看",
       happiness: 4,
     },
     {
@@ -77,14 +83,14 @@ const MemoriesPage = ({ onBackButtonClicked }) => {
       image: seventhImg,
       imageAlt: "seventh-img",
       description:
-        "我記得吃晚餐時我真的想要立刻回家 (因為你一直都在看手機，完全不理我講話)。不過走到虎頭山時我超級無底開心，所以給你滿分",
+        "我記得吃晚餐時我真的想要立刻回家>:(。不過走到去頭山去真的很好玩，也是第一次看到你很幸福所以我很開心，雖然那是因為我踩到狗屎。",
       happiness: 5,
     },
     {
       title: "2025/11/22 - 府中走到廟街夜市 - 板橋",
       image: eighthImg,
       imageAlt: "eighth-img",
-      description: "你逼我吃香菜！其實我一整天都覺得很好玩很好吃",
+      description: "你逼我吃香菜！但那一天我真的覺得什麼都好吃又好玩。",
       happiness: 5,
     },
     {
@@ -92,35 +98,39 @@ const MemoriesPage = ({ onBackButtonClicked }) => {
       image: ninthImg,
       imageAlt: "ninth-img",
       description:
-        "對不起又讓你哭了，希望你跟我的時候都開開心心的，但還是討厭你！",
+        "有些時候我們也會不開心。對不起又讓你哭了，我希望以後能給你更多安心和快樂 (雖然我那時候想要推開我😡)",
       happiness: 3,
     },
     {
       title: "2025/11/28 - Zootopia 2 - 桃園",
       image: tenthImg,
       imageAlt: "tenth-img",
-      description: "不知道為什麼那天沒拍很多照片...是不是不愛了...",
+      description:
+        "不知道為什麼那天沒拍很多照片...是不是不愛了呢...電影其實就那樣，但你還是一樣很漂亮！",
       happiness: 4,
     },
     {
       title: "2025/11/29 - Momo (桃園) + 第一次喝酒 (板橋) + 鄭佳旻生日",
       image: eleventhImg,
       imageAlt: "eleventh-img",
-      description: "生日快樂！！！",
+      description:
+        "鄭佳旻，生日快樂！！！不好意思叔叔阿姨進去你們家，也不好意思把蛋糕放在你們家的冰箱裡...",
       happiness: 5,
     },
     {
       title: "2025/11/30 - 楊聰恩家，好樂迪 - 板橋",
       image: twelfthImg,
       imageAlt: "twelfth-img",
-      description: "你本來就很好看，結果唱歌更犯規，我完全變成你的粉絲了",
+      description:
+        "你本來就很好看，沒想到唱歌更犯規，音準極佳 (並不是五音不全)，我完全變成你的粉絲了",
       happiness: 5,
     },
     {
       title: "2025/12/4 - 酸菜魚 - 板橋",
       image: thirtheenthImg,
       imageAlt: "thirtheenth-img",
-      description: "酸菜魚很好吃，但你這裡在看啥？",
+      description:
+        "酸菜魚很好吃，但你為什麼沒有點油條呢？還有我想請問你：你這裡在看什麼？",
       happiness: 5,
     },
     {
@@ -142,35 +152,38 @@ const MemoriesPage = ({ onBackButtonClicked }) => {
       title: "2025/12/10 - 散步 - 鳳鳴",
       image: sixteenthImg,
       imageAlt: "sixteenth-img",
-      description: "蛋糕帶來的幸福，總是比楊聰恩給的多。希望你跟我也能找到幸福",
+      description:
+        "蛋糕帶來的幸福確實很短，但總是比楊聰恩給的多。希望你跟我以後也能找到長久的幸福",
       happiness: 5,
     },
     {
       title: "2025/12/12 - 風禾公園/金三順韓國料理 - 桃園",
       image: seventeenthImg,
       imageAlt: "seventeenth-img",
-      description: "又是因為吃甜甜圈才能這麼幸福...",
+      description: "又是因為吃甜甜圈才能這麼開心...",
       happiness: 4,
     },
     {
       title: "2025/12/13 - 裕隆城 - 新店區",
       image: eighteenthImg,
       imageAlt: "eighteenth-img",
-      description: "喝飲料也會讓你這麼開心哦",
+      description: "喝飲料時也會讓你這麼開心哦...",
       happiness: 5,
     },
     {
       title: "2025/12/14 - 府中 15《感覺氣OFF/ON》, 新北歡樂耶誕城 - 板橋",
       image: nineteenthImg,
       imageAlt: "nineteenth-img",
-      description: "幹嘛那麼開心，有點忘記那天做了什麼",
+      description:
+        "Oi! 幹嘛那麼開心，有點忘記那天做了什麼，也不知道要寫什麼了哈哈哈",
       happiness: 5,
     },
     {
       title: "2025/12/18 - 新光三越春水堂 / 散步 - 桃園",
       image: twentiethImg,
       imageAlt: "twentieth-img",
-      description: "雖然模糊但還是很好看！不可以抱怨！春水堂很好吃，給你滿分！",
+      description:
+        "雖然有點模糊但還是很好看！不可以抱怨！春水堂很好吃，給你滿分！",
       happiness: 5,
     },
     {
@@ -200,58 +213,124 @@ const MemoriesPage = ({ onBackButtonClicked }) => {
   }, []);
 
   useEffect(() => {
-    if (index < memories.length - 1) {
+    if (index < memories.length) {
       const timer = setTimeout(() => {
         setIndex((prev) => prev + 1);
-      }, 5000);
+      }, 10000);
       return () => clearTimeout(timer);
     }
   }, [index, memories.length]);
 
   return (
-    <div>
-      {index < memories.length - 1 ? (
-        <div className="memories-container">
-          <motion.div className="memories-title">Memories</motion.div>
+    <div className="memories-container">
+      <motion.div className="memories-title">Memories</motion.div>
+      <AnimatePresence mode="wait">
+        {index < memories.length ? (
+          <motion.div
+            key={index}
+            className="memories-cards-container"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.8 }}
+          >
+            <div className="memories-card-container">
+              <div className="memories-card-title">{memories[index].title}</div>
+              {memories[index].image && (
+                <div className="memories-card-img-container">
+                  <img
+                    className="memories-card-img"
+                    src={memories[index].image}
+                    alt={memories[index].imageAlt}
+                  />
+                </div>
+              )}
+              <div className="memories-card-description">
+                {memories[index].description}
+              </div>
+              <div className="memories-card-happiness">
+                <div>開心度: </div>
+                <div>{"😊".repeat(memories[index].happiness)}</div>
+              </div>
+            </div>
+          </motion.div>
+        ) : index === memories.length ? (
           <div className="memories-cards-container">
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={index}
-                className="memories-card-container"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-                transition={{ duration: 0.6 }}
+            <motion.div
+              key="more"
+              className="final-message-card"
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, x: -100 }}
+            >
+              <div className="memories-card-title">
+                ...以及更多以後的點點滴滴
+              </div>
+              <div className="memories-card-description">
+                我們的故事還在繼續，你願意跟我一起探索下去嗎？
+              </div>
+              <div className="memories-card-img-container">
+                <img
+                  className="memories-card-img"
+                  src={pokemonImg}
+                  alt="heart-shaped-photo"
+                />
+              </div>
+              <button
+                className="final-message-button"
+                onClick={() => setIndex(memories.length + 1)}
               >
-                <div className="memories-card-title">
-                  {memories[index].title}
-                </div>
-
-                {memories[index].image && (
-                  <div className="memories-card-img-container">
-                    <img
-                      className="memories-card-img"
-                      src={memories[index].image}
-                      alt={memories[index].imageAlt}
-                    />
-                  </div>
-                )}
-
-                <div className="memories-card-description">
-                  {memories[index].description}
-                </div>
-
-                <div className="memories-card-happiness">
-                  <div>開心度: </div>
-                  {"😊".repeat(memories[index].happiness)}
-                </div>
-              </motion.div>
-            </AnimatePresence>
+                願意
+              </button>
+            </motion.div>
           </div>
-        </div>
-      ) : (
-        <div>Empty</div>
-      )}
+        ) : index === memories.length + 1 ? (
+          <div className="memories-cards-container">
+            <motion.div
+              key="question"
+              className="final-message-card"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 1, delay: 1 }}
+            >
+              <div className="memories-card-title">最後，我想問妳...</div>
+              <div className="memories-card-img-container">
+                <img
+                  className="memories-card-img"
+                  src={xiaochouImg}
+                  alt="heart-shaped-photo"
+                />
+              </div>
+              <div className="memories-card-description">
+                妳願意當我的女朋友嗎？
+              </div>
+
+              <button
+                className="final-message-button"
+                onClick={() => setIndex(memories.length + 2)}
+              >
+                我願意
+              </button>
+              <button
+                className="final-message-button-2"
+                onClick={() => setIndex(memories.length + 2)}
+              >
+                我願意
+              </button>
+            </motion.div>
+          </div>
+        ) : (
+          <div className="final-image">
+            <div className="final-title">
+              Congratulation! You just got a new boyfriend!
+            </div>
+            <button className="back-button" onClick={onBackButtonClicked}>
+              Go back
+            </button>
+          </div>
+        )}
+      </AnimatePresence>
     </div>
   );
 };

@@ -10,7 +10,6 @@ const App = () => {
    * 0: Input your name
    * 1: Introduction
    * 2: Main Page
-   * 3: Ask her out
    */
   const [currentPage, setCurrentPage] = useState(0);
 
