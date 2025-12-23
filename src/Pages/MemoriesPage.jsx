@@ -150,7 +150,7 @@ const MemoriesPage = ({ onBackButtonClicked }) => {
       image: seventeenthImg,
       imageAlt: "seventeenth-img",
       description: "又是因為吃甜甜圈才能這麼幸福...",
-      happiness: 5,
+      happiness: 4,
     },
     {
       title: "2025/12/13 - 裕隆城 - 新店區",
@@ -194,7 +194,7 @@ const MemoriesPage = ({ onBackButtonClicked }) => {
     if (index < memories.length - 1) {
       const timer = setTimeout(() => {
         setIndex((prev) => prev + 1);
-      }, 5000);
+      }, 1000);
       return () => clearTimeout(timer);
     }
   }, [index, memories.length]);
@@ -243,45 +243,6 @@ const MemoriesPage = ({ onBackButtonClicked }) => {
       ) : (
         <div>Empty</div>
       )}
-    </div>
-  );
-
-  return (
-    <div className="memories-container">
-      <motion.div className="memories-title">Memories</motion.div>
-      <div className="memories-cards-container">
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={index}
-            className="memories-card-container"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.6 }}
-          >
-            <div className="memories-card-title">{memories[index].title}</div>
-
-            {memories[index].image && (
-              <div className="memories-card-img-container">
-                <img
-                  className="memories-card-img"
-                  src={memories[index].image}
-                  alt={memories[index].imageAlt}
-                />
-              </div>
-            )}
-
-            <div className="memories-card-description">
-              {memories[index].description}
-            </div>
-
-            <div className="memories-card-happiness">
-              <div>開心度: </div>
-              {"😊".repeat(memories[index].happiness)}
-            </div>
-          </motion.div>
-        </AnimatePresence>
-      </div>
     </div>
   );
 };
