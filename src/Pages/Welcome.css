@@ -134,7 +134,7 @@ input:valid {
   width: 60px;
   top: 20px;
   left: 20px;
-  z-index: 5;
+  z-index: 10;
 }
 
 .error-message-container {
