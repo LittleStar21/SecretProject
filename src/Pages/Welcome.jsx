@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import "./Welcome.css";
 
 import snoopyImg from "./assets/hello.png";
@@ -8,150 +8,127 @@ import snoopyHugImg from "./assets/test.png";
 const Welcome = ({ onNext }) => {
   const [userNameInput, setUserNameInput] = useState("");
   const [partnerNameInput, setPartnerNameInput] = useState("");
+  const [meetDate, setMeetDate] = useState("");
+  const [meetLocation, setMeetLocation] = useState("");
+  const [error, setError] = useState("");
 
   const handleSubmit = () => {
-    const correctUserNameArray = ["Gamin", "gamin", "鄭佳旻", "佳旻"];
-    const correctParnerNameArray = [
-      "Leonard Ian",
-      "leonard ian",
-      "Ian",
-      "ian",
-      "Leonard",
-      "leonard",
-    ];
+    const user = userNameInput.trim().toLowerCase();
+    const partner = partnerNameInput.trim().toLowerCase();
+    const location = meetLocation.trim().toLowerCase();
 
-    const isUserNameCorrect = correctUserNameArray.includes(
-      userNameInput.trim(),
-    );
-    const isPartnerNameCorrect = correctParnerNameArray.includes(
-      partnerNameInput.trim(),
+    const isUserCorrect = ["gamin", "鄭佳旻", "佳旻"].includes(user);
+    const isPartnerCorrect = ["ian", "leonard", "楊聰恩", "聰恩"].some((name) =>
+      partner.includes(name),
     );
 
-    if (
-      partnerNameInput.trim() === "楊咩咩" ||
-      partnerNameInput.trim() === "羊咩咩"
+    const isDateCorrect = meetDate === "2025-11-01";
+    const isLocationCorrect = location === "桃園火車站";
+
+    if (partner === "楊咩咩" || partner === "羊咩咩") {
+      setError("Only you call me that! But use my real name here. 😡❤️");
+    } else if (
+      isUserCorrect &&
+      isPartnerCorrect &&
+      isDateCorrect &&
+      isLocationCorrect
     ) {
-      alert("😡😡😡");
-    } else if (!isUserNameCorrect || !isPartnerNameCorrect) {
-      alert("Please try again!");
-    } else {
+      setError(""); // Clear error
       onNext();
+    } else {
+      // Specific hints based on what might be wrong
+      if (!isDateCorrect || !isLocationCorrect) {
+        setError("Are you sure about that date or place? Think harder! 🔍");
+      } else {
+        setError("Access Denied: Only the VIP couple can enter! ✨");
+      }
     }
   };
 
   return (
-    <div>
-      <div className="welcome-topbar"></div>
+    <div className="welcome-page">
       <div className="welcome-background">
-        <div className="welcome-container">
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={{
-              opacity: 1,
-              y: 0,
-              transition: { duration: 2, ease: "easeOut" },
-            }}
-          >
-            <motion.div
-              className="welcome-title"
-              initial={{ opacity: 0, y: 50 }}
-              animate={{
-                opacity: 1,
-                y: 0,
-                transition: { delay: 1, duration: 0.8 },
-              }}
-            >
-              Hello!
-            </motion.div>
+        <motion.div
+          className="welcome-container"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+        >
+          <div className="welcome-title">Hello!</div>
 
-            <div className="inputs-container">
-              <motion.div
-                className="input-container"
-                initial={{ opacity: 0, y: 50 }}
-                animate={{
-                  opacity: 1,
-                  y: 0,
-                  transition: { delay: 2, duration: 0.8 },
-                }}
-              >
-                <div className="input-entry-area">
-                  <input
-                    type="text"
-                    required
-                    value={userNameInput}
-                    onChange={(e) => {
-                      setUserNameInput(e.target.value);
-                    }}
-                  ></input>
-                  <div className="input-labelline">Enter your name</div>
-                </div>
-              </motion.div>
-
-              <motion.div
-                className="input-container"
-                initial={{ opacity: 0, y: 50 }}
-                animate={{
-                  opacity: 1,
-                  y: 0,
-                  transition: { delay: 3, duration: 0.8 },
-                }}
-              >
-                <div className="input-entry-area">
-                  <input
-                    type="text"
-                    required
-                    value={partnerNameInput}
-                    onChange={(e) => {
-                      setPartnerNameInput(e.target.value);
-                    }}
-                  ></input>
-                  <div className="input-labelline">
-                    Enter your partner's name
-                  </div>
-                </div>
-              </motion.div>
+          <div className="inputs-group">
+            <div className="input-entry-area">
+              <input
+                type="text"
+                required
+                value={userNameInput}
+                onChange={(e) => setUserNameInput(e.target.value)}
+              />
+              <div className="input-labelline">Your Name</div>
             </div>
 
-            <motion.div
-              className="snoopy-hug-img-container"
-              initial={{ opacity: 0, y: 50 }}
-              animate={{
-                opacity: 1,
-                y: 0,
-                transition: { delay: 4, duration: 0.8 },
-              }}
-            >
-              <img
-                className="snoopy-hug-img"
-                src={snoopyHugImg}
-                alt="test-img"
-              ></img>
-            </motion.div>
+            <div className="input-entry-area">
+              <input
+                type="text"
+                required
+                value={partnerNameInput}
+                onChange={(e) => setPartnerNameInput(e.target.value)}
+              />
+              <div className="input-labelline">Partner's Name</div>
+            </div>
 
-            <motion.button
-              className="submit-button"
-              onClick={handleSubmit}
-              initial={{ opacity: 0, y: 50, scale: 0 }}
-              animate={{
-                opacity: 1,
-                y: 0,
-                scale: 1,
-                transition: {
-                  delay: 5,
-                  duration: 0.2,
-                },
-              }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Submit
-            </motion.button>
-          </motion.div>
-        </div>
-        <img
-          src={snoopyImg}
-          alt="Snoopy image"
-          className="welcome-snoopy-img"
-        ></img>
+            <div className="input-entry-area">
+              <input
+                type="date"
+                required
+                className="date-input"
+                value={meetDate}
+                onChange={(e) => setMeetDate(e.target.value)}
+              />
+              <div className="input-labelline date-label">
+                When did we first meet?
+              </div>
+            </div>
+
+            <div className="input-entry-area">
+              <input
+                type="text"
+                required
+                value={meetLocation}
+                onChange={(e) => setMeetLocation(e.target.value)}
+              />
+              <div className="input-labelline">Where did we first meet?</div>
+            </div>
+          </div>
+
+          {/* Inline Error Message */}
+          <div className="error-message-container">
+            <AnimatePresence>
+              {error && (
+                <motion.div
+                  initial={{ opacity: 0, x: -10 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0 }}
+                  className="error-text"
+                >
+                  {error}
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+
+          <div className="snoopy-hug-container">
+            <img
+              className="snoopy-hug-img"
+              src={snoopyHugImg}
+              alt="Snoopy Hug"
+            />
+          </div>
+
+          <button className="submit-button" onClick={handleSubmit}>
+            Enter
+          </button>
+        </motion.div>
+        <img src={snoopyImg} alt="Snoopy" className="welcome-snoopy-corner" />
       </div>
     </div>
   );
