@@ -83,7 +83,7 @@ const MemoriesPage = ({ onBackButtonClicked }) => {
       image: seventhImg,
       imageAlt: "seventh-img",
       description:
-        "我記得吃晚餐時我真的想要立刻回家>:(。不過走到去頭山去真的很好玩，也是第一次看到你很幸福所以我很開心，雖然那是因為我踩到狗屎。",
+        "我記得吃晚餐時我真的想要立刻回家...不過走到去頭山去真的很好玩，也是第一次看到你很幸福所以我很開心，雖然那是因為我踩到狗屎。",
       happiness: 5,
     },
     {
@@ -222,14 +222,28 @@ const MemoriesPage = ({ onBackButtonClicked }) => {
     if (index < memories.length) {
       const timer = setTimeout(() => {
         setIndex((prev) => prev + 1);
-      }, 10000);
+      }, 8000);
       return () => clearTimeout(timer);
     }
   }, [index, memories.length]);
 
   return (
     <div className="memories-container">
-      <motion.div className="memories-title">Memories</motion.div>
+      <motion.div
+        className="memories-title"
+        initial={{ opacity: 0, y: 50 }}
+        animate={{
+          opacity: 1,
+          y: 0,
+          transition: {
+            duration: 2,
+            ease: "easeOut",
+            delay: 0.5,
+          },
+        }}
+      >
+        Memories
+      </motion.div>
       <AnimatePresence mode="wait">
         {index < memories.length ? (
           <motion.div
@@ -238,7 +252,7 @@ const MemoriesPage = ({ onBackButtonClicked }) => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.8, delay: 1 }}
           >
             <div className="memories-card-container">
               <div className="memories-card-title">{memories[index].title}</div>
