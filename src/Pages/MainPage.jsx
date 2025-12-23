@@ -14,7 +14,7 @@ const MainPage = () => {
   // 1: Why I like you
   // 2: Memories
   // 3: Secret
-  const [currentState, setCurrentState] = useState(2);
+  const [currentState, setCurrentState] = useState(0);
 
   useEffect(() => {
     window.scrollTo(0, 0);

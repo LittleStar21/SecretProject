@@ -194,7 +194,7 @@ const MemoriesPage = ({ onBackButtonClicked }) => {
     if (index < memories.length - 1) {
       const timer = setTimeout(() => {
         setIndex((prev) => prev + 1);
-      }, 1000);
+      }, 5000);
       return () => clearTimeout(timer);
     }
   }, [index, memories.length]);
