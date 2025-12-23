@@ -191,6 +191,15 @@ const MemoriesPage = ({ onBackButtonClicked }) => {
   ];
 
   useEffect(() => {
+    memories.forEach((memory) => {
+      if (memory.image) {
+        const img = new Image();
+        img.src = memory.image;
+      }
+    });
+  }, []);
+
+  useEffect(() => {
     if (index < memories.length - 1) {
       const timer = setTimeout(() => {
         setIndex((prev) => prev + 1);
