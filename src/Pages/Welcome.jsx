@@ -26,17 +26,16 @@ const Welcome = ({ onNext }) => {
     const isLocationCorrect = location === "桃園火車站";
 
     if (partner === "楊咩咩" || partner === "羊咩咩") {
-      setError("Only you call me that! But use my real name here. 😡❤️");
+      setError("No! Please use my real name here 😡");
     } else if (
       isUserCorrect &&
       isPartnerCorrect &&
       isDateCorrect &&
       isLocationCorrect
     ) {
-      setError(""); // Clear error
+      setError("");
       onNext();
     } else {
-      // Specific hints based on what might be wrong
       if (!isDateCorrect || !isLocationCorrect) {
         setError("Are you sure about that date or place? Think harder! 🔍");
       } else {

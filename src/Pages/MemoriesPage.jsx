@@ -360,7 +360,7 @@ const MemoriesPage = ({ onBackButtonClicked }) => {
               </motion.div>
 
               <h1 className="final-title">SUCCESS!</h1>
-              <h2 className="final-subtitle">妳現在有一位新男友了！</h2>
+              <h2 className="final-subtitle">妳現在有一位男友了！</h2>
 
               <div className="final-stats-box">
                 <div className="stat-item">
@@ -378,7 +378,7 @@ const MemoriesPage = ({ onBackButtonClicked }) => {
               <p className="final-message">
                 謝謝妳答應我。我會努力當一個讓妳驕傲，讓妳快樂的男友。
                 <br />
-                未來的每一頁，我們一起寫。
+                未來的每一頁，我們一起寫吧。
               </p>
 
               <button className="final-back-btn" onClick={onBackButtonClicked}>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import "./WhyYouLikeMe.css";
 
@@ -14,13 +14,14 @@ const WhyYouLikeMe = ({ onBackButtonClicked }) => {
     {
       id: 2,
       text: "我很帥",
-      response: "不要亂講！我覺得你眼睛瞎了...",
+      response:
+        "不要亂講！我覺得你眼睛瞎了...而且，是你很漂亮，我只是一般般的。",
     },
     {
       id: 3,
       text: "我的眼睛",
       response:
-        "雖然我不太懂，但是這個我可以理解。畢竟以前有些人也是這麼覺得。",
+        "雖然我不太懂，但是這個我可以接受。畢竟以前有些人也是這麼覺得。",
     },
     {
       id: 4,
@@ -40,12 +41,17 @@ const WhyYouLikeMe = ({ onBackButtonClicked }) => {
     {
       id: 7,
       text: "我踩到狗屎還能逗妳開心的能力",
-      response: "希望以後有別的能讓你開心的事情。我不能每天都要踩到狗屎。",
+      response: "希望以後有別的能讓你開心的事情。我不能每天都踩到狗屎...",
     },
     {
       id: 8,
       text: "我很會照顧人（雖然通常是妳在照顧我）",
       response: "以後換我多照顧妳一點，把妳寵壞。",
+    },
+    {
+      id: 9,
+      text: "我的笑話",
+      response: "不可能，因為你說過我的笑點很低。",
     },
   ];
 

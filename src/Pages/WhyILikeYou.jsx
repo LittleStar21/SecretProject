@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import "./WhyILikeYou.css";
 
@@ -13,9 +13,21 @@ const WhyILikeYou = ({ onBackButtonClicked }) => {
       icon: "😇",
     },
     {
+      title: "Your Face",
+      reason:
+        "每次看到你的臉我都是覺得妳很漂亮。我真的覺得妳是我認識最漂亮的女生之一。",
+      icon: "👧",
+    },
+    {
       title: "Your Hair",
       reason: "我喜歡妳的頭髮，不知道怎麼解釋但是總覺得很有魅力。",
       icon: "💇‍♀️",
+    },
+    {
+      title: "Your Hands",
+      reason:
+        "牽著妳的手我才發現原來我可以這麼放鬆，這麼安心。也對之前不小心弄痛妳的手感到很抱歉。",
+      icon: "🤚",
     },
     {
       title: "The Perfect Smile",
@@ -26,7 +38,7 @@ const WhyILikeYou = ({ onBackButtonClicked }) => {
     {
       title: "Our Walks",
       reason:
-        "我很喜歡跟你一起散步。以前我不太喜歡散步，也不太想去公園，可是只要跟你在一起就會覺得很開心。",
+        "我很喜歡跟你一起散步。以前我不太喜歡散步，也不太想去公園，可是只要跟你在一起就會覺得很開心。你也願意跟我一起走路去虎頭山，那天我真的開心極了。",
       icon: "👫",
     },
     {
