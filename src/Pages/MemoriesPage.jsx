@@ -35,7 +35,7 @@ const MemoriesPage = ({ onBackButtonClicked }) => {
       image: sushiDateImg,
       imageAlt: "sushi-date-img",
       description:
-        "這是我們第一次見面。我那時候真的很緊張，不知道該說什麼、該做什麼，但只要跟你在一起，我就覺得很開心。",
+        "這是我們第一次見面。我那時候真的很緊張，不知道該說什麼，該做什麼，但只要跟你在一起，我就覺得很開心。",
       happiness: 5,
     },
     {
@@ -376,7 +376,7 @@ const MemoriesPage = ({ onBackButtonClicked }) => {
               </div>
 
               <p className="final-message">
-                謝謝妳答應我。我會努力當一個讓妳驕傲、讓妳快樂的男友。
+                謝謝妳答應我。我會努力當一個讓妳驕傲，讓妳快樂的男友。
                 <br />
                 未來的每一頁，我們一起寫。
               </p>

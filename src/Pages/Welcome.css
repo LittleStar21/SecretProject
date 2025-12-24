@@ -1,16 +1,14 @@
 .welcome-page {
   width: 100vw;
   height: 100vh;
-  background-color: #ffffff; /* Restored to White */
+  background-color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
   position: relative;
-  font-family: "Inter", sans-serif;
 }
 
-/* Restored the Peach bottom-right accent */
 .welcome-page::after {
   content: "";
   position: absolute;
@@ -18,7 +16,7 @@
   right: 0;
   width: 100%;
   height: 100%;
-  background: #f3deca; /* Peach accent */
+  background: #f3deca;
   clip-path: polygon(100% 50%, 100% 100%, 50% 100%);
   z-index: 0;
 }
@@ -26,7 +24,7 @@
 .welcome-container {
   position: relative;
   width: 320px;
-  background-color: #2d4057; /* Navy Container */
+  background-color: #2d4057;
   border-radius: 12px;
   padding: 50px 25px 30px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
@@ -37,7 +35,7 @@
 .welcome-title {
   font-size: 36px;
   font-weight: bold;
-  color: #ffffff; /* White text */
+  color: #ffffff;
   margin-bottom: 40px;
   display: flex;
   justify-content: center;
@@ -59,7 +57,7 @@
   width: 100%;
   padding: 12px 15px;
   background: transparent;
-  border: 2px solid #f0ffff; /* Light border */
+  border: 2px solid #f0ffff;
   border-radius: 10px;
   outline: none;
   color: #ffffff;
@@ -73,10 +71,10 @@
   left: 15px;
   top: 50%;
   transform: translateY(-50%);
-  color: #f0ffff; /* Matches your original label color */
+  color: #f0ffff;
   pointer-events: none;
   transition: 0.3s ease;
-  background-color: #2d4057; /* Matches container */
+  background-color: #2d4057;
   padding: 0 10px;
   font-size: 12px;
 }
@@ -138,7 +136,7 @@ input:valid {
 }
 
 .error-message-container {
-  height: 40px; /* Reserved space so layout doesn't "jump" when error appears */
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -146,7 +144,7 @@ input:valid {
 }
 
 .error-text {
-  color: #fa9483; /* Using your Coral for errors */
+  color: #fa9483;
   font-size: 13px;
   font-weight: 600;
   background: rgba(250, 148, 131, 0.1);

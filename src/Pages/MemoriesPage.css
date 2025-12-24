@@ -24,7 +24,7 @@
 .memories-card-container {
   position: relative;
   background-color: #f2eae3;
-  height: 450px;
+  height: 460px;
   width: 260px;
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.08);
   display: flex;
@@ -131,16 +131,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #2f5b64; /* Teal Background */
+  background-color: #2f5b64;
   padding: 20px;
 }
 
 .final-card-wrapper {
-  background: rgba(242, 234, 227, 0.15); /* Semi-transparent Cream */
+  background: rgba(242, 234, 227, 0.15);
   backdrop-filter: blur(10px);
   padding: 50px 30px;
   border-radius: 30px;
-  border: 2px solid #fa9483; /* Coral Border */
+  border: 2px solid #fa9483;
   text-align: center;
   max-width: 450px;
   width: 100%;
@@ -154,22 +154,22 @@
 }
 
 .final-title {
-  color: #fa9483; /* Coral */
-  font-size: 3rem;
+  color: #fa9483;
+  font-size: 2.6rem;
   font-weight: 900;
   margin: 0;
   letter-spacing: 4px;
 }
 
 .final-subtitle {
-  color: #f2eae3; /* Cream */
-  font-size: 1.5rem;
+  color: #f2eae3;
+  font-size: 1.3rem;
   margin-bottom: 30px;
   font-weight: 300;
 }
 
 .final-stats-box {
-  background: #f2eae3; /* Cream */
+  background: #f2eae3;
   padding: 20px;
   border-radius: 15px;
   margin-bottom: 30px;
@@ -180,7 +180,7 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: 10px;
-  color: #2d4057; /* Navy */
+  color: #2d4057;
 }
 
 .stat-item .label {

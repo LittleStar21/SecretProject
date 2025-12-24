@@ -11,7 +11,7 @@ const App = () => {
    * 1: Introduction
    * 2: Main Page
    */
-  const [currentPage, setCurrentPage] = useState(0);
+  const [currentPage, setCurrentPage] = useState(2);
 
   return (
     <div className="my-app">

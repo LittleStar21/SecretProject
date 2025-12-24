@@ -1,6 +1,6 @@
 .intro-container {
   height: 100vh;
-  background-color: #2f5b64; /* Your Teal */
+  background-color: #2f5b64;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -11,7 +11,6 @@
   text-align: center;
 }
 
-/* Adds a soft focus glow around the edges */
 .intro-vignette {
   position: absolute;
   inset: 0;
@@ -29,7 +28,7 @@
 }
 
 .intro-text-box {
-  color: #f2eae3; /* Your Cream */
+  color: #f2eae3;
   font-size: 1.4rem;
   line-height: 1.8;
   font-weight: 300;
@@ -47,7 +46,7 @@
 }
 
 .intro-next-btn {
-  background-color: #fa9483; /* Your Coral */
+  background-color: #fa9483;
   color: white;
   border: none;
   padding: 12px 40px;

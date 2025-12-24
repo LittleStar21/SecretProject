@@ -27,7 +27,7 @@
 }
 
 .choice-card {
-  background-color: #f2eae3; /* Cream */
+  background-color: #f2eae3;
   border: 2px solid transparent;
   padding: 18px;
   border-radius: 15px;
@@ -40,12 +40,12 @@
 }
 
 .choice-card.selected {
-  border-color: #fa9483; /* Coral */
+  border-color: #fa9483;
   background-color: #e8ded4;
 }
 
 .my-response-bubble {
-  background-color: #fa9483; /* Coral */
+  background-color: #fa9483;
   color: white;
   padding: 12px 18px;
   border-radius: 15px;
