@@ -46,17 +46,12 @@ const WhyYouLikeMe = ({ onBackButtonClicked }) => {
     {
       id: 8,
       text: "我很會照顧人（雖然通常是妳在照顧我）",
-      response: "以後換我多照顧妳一點，把妳寵壞。",
+      response: "以後換我多照顧妳一點，把妳寵壞。LOVES 🔑",
     },
     {
       id: 9,
       text: "我的笑話",
       response: "不可能，因為你說過我的笑點很低。而且你說了我很難聊天😔",
-    },
-    {
-      id: 10,
-      text: "我的秘密",
-      response: "LOVES 🔑",
     },
   ];
 
