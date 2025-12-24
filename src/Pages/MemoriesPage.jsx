@@ -2,6 +2,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 import "./MemoriesPage.css";
 
+// Image Imports
 import sushiDateImg from "./assets/sushi_date.jpg";
 import moviesImg from "./assets/memories/movies.jpg";
 import thirdImg from "./assets/memories/third-photo.jpg";
@@ -29,6 +30,9 @@ import xiaochouImg from "./assets/memories/xiaochou-photo.jpg";
 
 const MemoriesPage = ({ onBackButtonClicked }) => {
   const [index, setIndex] = useState(0);
+  const [passcode, setPasscode] = useState("");
+  const [isError, setIsError] = useState(false);
+
   const memories = [
     {
       title: "2025/11/1 - 第一次見面 - 桃園",
@@ -90,7 +94,7 @@ const MemoriesPage = ({ onBackButtonClicked }) => {
       title: "2025/11/22 - 府中走到廟街夜市 - 板橋",
       image: eighthImg,
       imageAlt: "eighth-img",
-      description: "你逼我吃香菜！但那一天我真的覺得什麼都好吃又好玩。",
+      description: "你逼我吃苦瓜和香菜！不過那一天我真的覺得什麼都好吃又好玩。",
       happiness: 5,
     },
     {
@@ -98,7 +102,7 @@ const MemoriesPage = ({ onBackButtonClicked }) => {
       image: ninthImg,
       imageAlt: "ninth-img",
       description:
-        "有些時候我們也會不開心。對不起又讓你哭了，我希望以後能給你更多安心和快樂 (雖然你那時候想要推開我😡)",
+        "有些時候我們也會不開心。對不起又讓你哭了，我希望以後能給你更多安心和快樂 (雖然那時候是你想要推開我😡)",
       happiness: 3,
     },
     {
@@ -204,142 +208,165 @@ const MemoriesPage = ({ onBackButtonClicked }) => {
     },
   ];
 
-  // Preload all images
-  useEffect(() => {
-    memories.forEach((memory) => {
-      if (memory.image) {
-        const img = new Image();
-        img.src = memory.image;
-      }
-
-      const img = new Image();
-      img.src = pokemonImg;
-      img.src = xiaochouImg;
-    });
-  }, []);
-
-  useEffect(() => {
-    if (index < memories.length) {
-      const timer = setTimeout(() => {
-        setIndex((prev) => prev + 1);
-      }, 8000);
-      return () => clearTimeout(timer);
+  const handlePasscodeSubmit = () => {
+    if (passcode.toUpperCase() === "GAMINLOVESIAN") {
+      setIndex(memories.length + 3);
+    } else {
+      setIsError(true);
+      setTimeout(() => setIsError(false), 500);
     }
-  }, [index, memories.length]);
+  };
+
+  useEffect(() => {
+    [...memories.map((m) => m.image), pokemonImg, xiaochouImg].forEach(
+      (src) => {
+        if (src) {
+          const img = new Image();
+          img.src = src;
+        }
+      },
+    );
+  }, []);
 
   return (
     <div className="memories-container">
-      <motion.div
-        className="memories-title"
-        initial={{ opacity: 0, y: 50 }}
-        animate={{
-          opacity: 1,
-          y: 0,
-          transition: {
-            duration: 1,
-            ease: "easeOut",
-            delay: 0.5,
-          },
-        }}
-      >
-        Memories
-      </motion.div>
+      {index < memories.length + 3 && (
+        <motion.div
+          className="memories-header"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+        >
+          <button className="mem-back-btn" onClick={onBackButtonClicked}>
+            ← Back
+          </button>
+          <div className="mem-title-text">Our Memories</div>
+        </motion.div>
+      )}
+
       <AnimatePresence mode="wait">
         {index < memories.length ? (
           <motion.div
-            key={index}
+            key={`mem-${index}`}
             className="memories-cards-container"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.8, delay: 1 }}
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 1.1 }}
           >
             <div className="memories-card-container">
               <div className="memories-card-title">{memories[index].title}</div>
-              {memories[index].image && (
-                <div className="memories-card-img-container">
-                  <img
-                    className="memories-card-img"
-                    src={memories[index].image}
-                    alt={memories[index].imageAlt}
-                  />
-                </div>
-              )}
+              <div className="memories-card-img-container">
+                <img
+                  className="memories-card-img"
+                  src={memories[index].image}
+                  alt="memory"
+                />
+              </div>
               <div className="memories-card-description">
                 {memories[index].description}
               </div>
               <div className="memories-card-happiness">
-                <div>開心度: </div>
-                <div>{"😊".repeat(memories[index].happiness)}</div>
+                <span>幸福指數: </span>
+                <span className="hearts">
+                  {"❤️".repeat(memories[index].happiness)}
+                </span>
               </div>
+              <button
+                className="next-memory-btn"
+                onClick={() => setIndex(index + 1)}
+              >
+                Next Memory
+              </button>
             </div>
           </motion.div>
         ) : index === memories.length ? (
-          <div className="memories-cards-container">
-            <motion.div
-              key="more"
-              className="final-message-card"
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, x: -100 }}
-            >
+          <motion.div
+            key="willing"
+            className="memories-cards-container"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+          >
+            <div className="final-message-card">
               <div className="memories-card-title">
                 ...以及更多以後的點點滴滴
-              </div>
-              <div className="memories-card-description">
-                我們的故事還在繼續，你願意跟我一起探索下去嗎？
               </div>
               <div className="memories-card-img-container">
                 <img
                   className="memories-card-img"
                   src={pokemonImg}
-                  alt="heart-shaped-photo"
+                  alt="future"
                 />
+              </div>
+              <div className="memories-card-description">
+                妳願意跟我一起探索下去嗎？
               </div>
               <button
                 className="final-message-button"
-                onClick={() => setIndex(memories.length + 1)}
+                onClick={() => setIndex(index + 1)}
               >
                 願意
               </button>
-            </motion.div>
-          </div>
+            </div>
+          </motion.div>
         ) : index === memories.length + 1 ? (
-          <div className="memories-cards-container">
-            <motion.div
-              key="question"
-              className="final-message-card"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 1, delay: 1 }}
-            >
+          <motion.div
+            key="proposal"
+            className="memories-cards-container"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+          >
+            <div className="final-message-card">
               <div className="memories-card-title">最後，我想問妳...</div>
               <div className="memories-card-img-container">
                 <img
                   className="memories-card-img"
                   src={xiaochouImg}
-                  alt="heart-shaped-photo"
+                  alt="proposal"
                 />
               </div>
-              <div className="memories-card-description">
-                妳願意當我的女朋友嗎？
-              </div>
-
+              <h2 className="proposal-question">
+                鄭佳旻，妳願意當我的女朋友嗎？
+              </h2>
               <button
-                className="final-message-button"
-                onClick={() => setIndex(memories.length + 2)}
+                className="proposal-btn-yes"
+                onClick={() => setIndex(index + 1)}
               >
-                我願意
+                願意
               </button>
+            </div>
+          </motion.div>
+        ) : index === memories.length + 2 ? (
+          <motion.div
+            key="lock"
+            className="memories-cards-container"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+          >
+            <div
+              className={`final-message-card lock-card ${isError ? "shake-animation" : ""}`}
+            >
+              <div className="key-icon-large">🔒</div>
+              <h2 className="lock-title">Enter the Secret Key</h2>
+              <p className="lock-desc">
+                Enter the code you found in the other pages to unlock.
+              </p>
+              <input
+                type="password"
+                className="key-input-field"
+                placeholder="Secret code"
+                value={passcode}
+                onChange={(e) => setPasscode(e.target.value)}
+              />
               <button
-                className="final-message-button-2"
-                onClick={() => setIndex(memories.length + 2)}
+                className="unlock-confirm-btn"
+                onClick={handlePasscodeSubmit}
               >
-                我願意
+                Confirm
               </button>
-            </motion.div>
-          </div>
+              {isError && (
+                <p className="error-text">不對喔，再想想密鑰是什麼？</p>
+              )}
+            </div>
+          </motion.div>
         ) : (
           <motion.div
             className="final-container"
@@ -382,7 +409,7 @@ const MemoriesPage = ({ onBackButtonClicked }) => {
               </p>
 
               <button className="final-back-btn" onClick={onBackButtonClicked}>
-                Go Back
+                Back
               </button>
             </div>
           </motion.div>

@@ -10,7 +10,7 @@ import fotoCallImg from "./assets/foto_call.png";
 import WhyILikeYou from "./WhyILikeYou";
 import WhyYouLikeMe from "./WhyYouLikeMe";
 import MemoriesPage from "./MemoriesPage";
-import MorePage from "./MorePage";
+import PartnerQuiz from "./PartnerQuiz";
 
 const MainPage = () => {
   // 0: Main Hub
@@ -34,7 +34,7 @@ const MainPage = () => {
     setCurrentState(3);
   };
 
-  const moreButtonCallback = () => {
+  const quizButtonCallback = () => {
     setCurrentState(4);
   };
 
@@ -61,11 +61,11 @@ const MainPage = () => {
       buttonCallback: memoriesButtonCallback,
     },
     {
-      title: "More",
+      title: "Partner Quiz",
       image: fotoCallImg,
       imageAlt: "no-image",
       description: null,
-      buttonCallback: moreButtonCallback,
+      buttonCallback: quizButtonCallback,
     },
   ];
 
@@ -146,7 +146,9 @@ const MainPage = () => {
         ></MemoriesPage>
       )}
       {currentState === 4 && (
-        <MorePage onBackButtonClicked={() => setCurrentState(0)}></MorePage>
+        <PartnerQuiz
+          onBackButtonClicked={() => setCurrentState(0)}
+        ></PartnerQuiz>
       )}
     </div>
   );

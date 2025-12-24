@@ -51,7 +51,12 @@ const WhyYouLikeMe = ({ onBackButtonClicked }) => {
     {
       id: 9,
       text: "我的笑話",
-      response: "不可能，因為你說過我的笑點很低。",
+      response: "不可能，因為你說過我的笑點很低。而且你說了我很難聊天😔",
+    },
+    {
+      id: 10,
+      text: "我的秘密",
+      response: "LOVES 🔑",
     },
   ];
 

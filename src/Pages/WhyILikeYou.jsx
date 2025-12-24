@@ -136,9 +136,7 @@ const WhyILikeYou = ({ onBackButtonClicked }) => {
                 </button>
               ) : (
                 <div className="completed-block">
-                  <p className="completion-msg">
-                    {questSteps.length} Reasons Unlocked! 🏆
-                  </p>
+                  <p className="completion-msg">GAMIN 🔑</p>
                   <button
                     className="finish-quest-btn"
                     onClick={onBackButtonClicked}
