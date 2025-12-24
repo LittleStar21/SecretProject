@@ -14,7 +14,7 @@ import ninthImg from "./assets/memories/ninth-photo.jpg";
 import tenthImg from "./assets/memories/tenth-photo.jpg";
 import eleventhImg from "./assets/memories/eleventh-photo.jpg";
 import twelfthImg from "./assets/memories/twelfth-photo.jpg";
-import thirtheenthImg from "./assets/memories/thirtheenth-photo.jpg";
+import thirteenthImg from "./assets/memories/thirteenth-photo.jpg";
 import fourteenthImg from "./assets/memories/fourteenth-photo.jpg";
 import fifteenthImg from "./assets/memories/fifteenth-photo.jpg";
 import sixteenthImg from "./assets/memories/sixteenth-photo.jpg";
@@ -127,7 +127,7 @@ const MemoriesPage = ({ onBackButtonClicked }) => {
     },
     {
       title: "2025/12/4 - 酸菜魚 - 板橋",
-      image: thirtheenthImg,
+      image: thirteenthImg,
       imageAlt: "thirtheenth-img",
       description:
         "酸菜魚很好吃，但你為什麼沒有點油條呢？還有我想請問你：你這裡在看什麼？",
