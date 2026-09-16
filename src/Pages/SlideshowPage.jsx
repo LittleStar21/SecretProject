@@ -38,12 +38,24 @@ import run10kImg from "./assets/memories/goodbye/run10k.jpg";
 import runInFengmingImg from "./assets/memories/goodbye/run_in_fengming.jpg";
 import taizhongParkImg from "./assets/memories/goodbye/taizhong_park.jpg";
 import xiaolurenImg from "./assets/memories/goodbye/xiaoluren.jpg";
+import frogFrontImg from "./assets/memories/goodbye/frog_front.jpg";
+import frogBackImg from "./assets/memories/goodbye/frog_back.jpg";
 
 const memories = [
   {
+    title: "2025/12/24 - 一切的開始",
+    image: frogFrontImg,
+    description: "感謝你給我最好的禮物，畫得很不錯！",
+  },
+  {
+    title: "2025/12/24 - 承諾和希望",
+    image: frogBackImg,
+    description: "真的感謝你！希望你都過得好好的，身體健康，天天開心！(Sorry我把禮物送給別人了😭)",
+  },
+  {
     title: "2026/07/18 - 礁溪 - 生日禮物",
     image: jiaoxiLiftPhotoImg,
-    descrition: "你送給我的生日禮物，那時候超級無底開心的！",
+    description: "你送給我的生日禮物，那時候超級無底開心的！真的！",
   },
   {
     title: "2026/07/19 - 在礁溪去咖啡廳",
@@ -53,12 +65,12 @@ const memories = [
   {
     title: "2026/07/19 - 在礁溪火車站等車",
     image: jiaoxiWaitingForCarxImg,
-    description: "一起等待，感受平淡而美好的片刻。",
+    description: "火車沒來不知道要幹嘛就看一下佳旻的魅力",
   },
   {
     title: "2026/07/12 - 鳳鳴跑3K",
     image: runInFengmingImg,
-    description: "在鳳鳴一起運動散步的日子。",
+    description: "在鳳鳴一起運動散步的日子。原本想跑5K但真的很累哈哈哈。希望你還會繼續跑步喔！",
   },
   {
     title: "2026/6/6 一 身體不舒服，還陪我去吃飯",
@@ -71,9 +83,9 @@ const memories = [
     description: "在車裡充滿歡笑的時光。我也很開心的！",
   },
   {
-    title: "2026/5/2 - 花蓮喝著牛奶看牛",
+    title: "2026/5/2 - 花蓮的好風景",
     image: happyGirlHualienImg,
-    description: "我看的是美女。",
+    description: "看著漂亮的風景和漂亮的佳旻：）",
   },
   {
     title: "2026/5/1 - 到花蓮了",
@@ -88,7 +100,7 @@ const memories = [
   {
     title: "2026/04/21 - 小綠人",
     image: xiaolurenImg,
-    description: "從美國回來，沒忘記給小綠人！",
+    description: "從美國回來，沒忘記給小綠人！請你好好照顧它，因為它什麼都沒有錯吧",
   },
   {
     title: "2026/3/28 - 到了台中",
@@ -96,120 +108,120 @@ const memories = [
     description: "喜歡去散步的",
   },
   {
-    title: "2025/11/01 - 第一次見面 - 桃園",
+    title: "025/11/1 - 第一次見面 - 桃園",
     image: sushiDateImg,
-    description: "我們第一次見面的那天。天氣晴朗，回憶歷歷在目。",
+    description: "這是我們第一次見面。我那時候真的很緊張，不知道該說什麼，該做什麼，但只要跟你在一起，我就覺得很開心。",
   },
   {
     title: "2025/11/07 - 看電影 (鬼童伴) - 桃園",
     image: moviesImg,
-    description: "第一次一起看電影的日子。",
+    description: "這是我第一次跟女生兩個人一起看電影。我覺得電影其實普普通通，但那天我緊張到心跳110 bpm。都怪你！",
   },
   {
-    title: "2025/11/13 - 旅人咖啡館 - 桃園",
+    title: "2025/11/13 - 旅人咖啡館 - 桃園店",
     image: thirdImg,
-    description: "悠閒地一起喝咖啡、聊天的時光。",
+    description: '我本來是想要和他一起撐一把傘。但是她忽然拿出來自己的傘。"你喜歡的人不是浪漫的人。"',
   },
   {
     title: "2025/11/14 - 新北耶誕城 - 板橋",
     image: fourthImg,
-    description: "熱鬧的夜景與璀璨的燈飾，珍貴的回憶。",
+    description: "感謝你特地來板橋找我。我知道你很累，但你還是來了。那天我真的很珍惜。你那天要是沒來我可能會考慮一些事 (開玩笑的)",
   },
   {
-    title: "2025/11/19 - 鳳鳴散步",
+    title: "2025/11/19 - 鳳鳴",
     image: fifthImg,
-    description: "微風吹拂散步的日子。",
+    description: "那天我心裡只有一個想法：嗯，你真的很漂亮，他是真的喜歡我嗎？感覺我不是她的level...",
   },
   {
     title: "2025/11/20 - 石二鍋/耶誕城 - 板橋",
     image: sixthImg,
-    description: "紀錄了許多溫馨照片的一天。",
+    description: "那天拍了很多照片。後來發現只要是跟你一起，怎麼拍都好看。我覺得我們真的需要多點問別人幫忙拍照。他們拍的很好看",
   },
   {
-    title: "2025/11/21 - 虎頭山環保公園 - 桃園",
+    title: "2025/11/13 - 走路去虎頭山環保公園 - 桃園",
     image: seventhImg,
-    description: "夜景很美，這一段路途留下了深刻的回憶。",
+    description: "我記得吃晚餐時我真的想要立刻回家...不過走到去頭山去真的很好玩，也是第一次看到你很幸福所以我很開心，雖然那是因為我踩到狗屎。",
   },
   {
-    title: "2025/11/22 - 廟街夜市 - 板橋",
+    title: "2025/11/22 - 府中走到廟街夜市 - 板橋",
     image: eighthImg,
-    description: "熱鬧的小吃散步與難忘的味道。",
+    description: "你逼我吃苦瓜和香菜！不過那一天我真的覺得什麼都好吃又好玩。",
   },
   {
-    title: "2025/11/26 - 鳳鳴",
+    title: "2025/11/26 - 散步😭 - 鳳鳴",
     image: ninthImg,
-    description: "相互理解與陪伴的日子。",
+    description: "有些時候我們也會不開心。對不起又讓你哭了，我希望以後能給你更多安心和快樂 (雖然那時候是你想要推開我😡)",
   },
   {
     title: "2025/11/28 - Zootopia 2 - 桃園",
     image: tenthImg,
-    description: "一邊看電影，一邊共享歡樂時光。",
+    description: "不知道為什麼那天沒拍很多照片...是不是不愛了呢...電影其實就那樣，但你還是一樣很漂亮！",
   },
   {
-    title: "2025/11/29 - Momo & 生日慶祝 - 桃園/板橋",
+    title: "2025/11/29 - Momo (桃園) + 第一次喝酒 (板橋) + 鄭佳旻生日",
     image: eleventhImg,
-    description: "為特別的日子留下的紀念片刻。",
+    description: "鄭佳旻，生日快樂！！！不好意思叔叔阿姨進去你們家，也不好意思把蛋糕放在你們家的冰箱裡...",
   },
   {
-    title: "2025/11/30 - 好樂迪 - 板橋",
+    title: "025/11/30 - 楊聰恩家，好樂迪 - 板橋",
     image: twelfthImg,
-    description: "歡笑與歌聲交織的一天。",
+    description: "你本來就很好看，沒想到唱歌更犯規，音準極佳 (並不是五音不全)，我完全變成你的粉絲了",
   },
   {
-    title: "2025/12/04 - 酸菜魚 - 板橋",
+    title: "2025/12/4 - 酸菜魚 - 板橋",
     image: thirteenthImg,
-    description: "一起品嚐美食，充滿笑容的午晚餐。",
+    description: "酸菜魚很好吃，但你為什麼沒有點油條呢？還有我想請問你：你這裡在看什麼？",
   },
   {
-    title: "2025/12/05 - 永吉公園散步 - 鳳鳴",
+    title: "2025/12/5 - 永吉公園散步 - 鳳鳴",
     image: fourteenthImg,
-    description: "公園裡的平淡與美好。",
+    description: "去桃園就是為了找你然後吃麥當勞？聽起來很笨！",
   },
   {
-    title: "2025/12/06 - 西門町與浮洲河濱公園",
+    title: "2025/12/6 - 西門町密室逃脫/騎Ubike/浮洲河濱公園散步/壽司郎",
     image: fifteenthImg,
-    description: "騎著腳踏車，吹著晚風踏青散步。",
+    description: "簡單來說就是一個超好玩的一天，除了我們玩的最後一關 (真的很笨)",
   },
   {
-    title: "2025/12/10 - 鳳鳴",
+    title: "2025/12/10 - 散步 - 鳳鳴",
     image: sixteenthImg,
-    description: "溫馨甜美的回憶角落。",
+    description: "蛋糕帶來的幸福確實很短，但總是比楊聰恩給的多。希望你跟我以後也能找到長久的幸福",
   },
   {
-    title: "2025/12/12 - 風禾公園 - 桃園",
+    title: "2025/12/12 - 風禾公園/金三順韓國料理 - 桃園",
     image: seventeenthImg,
-    description: "享受甜甜圈與陽光午後的時光。",
+    description: "又是因為吃甜甜圈才能這麼開心...",
   },
   {
-    title: "2025/12/13 - 裕隆城 - 新店",
+    title: "2025/12/13 - 裕隆城 - 新店區",
     image: eighteenthImg,
-    description: "手拿飲料漫步商場的悠閒週末。",
+    description: "喝飲料時也會讓你這麼開心哦...",
   },
   {
-    title: "2025/12/14 - 府中 15 與耶誕城 - 板橋",
+    title: "2025/12/14 - 府中 15《感覺氣OFF/ON》, 新北歡樂耶誕城 - 板橋",
     image: nineteenthImg,
-    description: "展覽與冬夜燈火的交相輝映。",
+    description: "幹嘛那麼開心，有點忘記那天做了什麼，也不知道要寫什麼了哈哈。對了，謝謝你買給我唇膏。",
   },
   {
-    title: "2025/12/18 - 春水堂 - 桃園",
+    title: "2025/12/18 - 新光三越春水堂 / 散步 - 桃園",
     image: twentiethImg,
-    description: "好喝的珍珠奶茶與好心情。",
+    description: "雖然有點模糊但還是很好看！不可以抱怨！春水堂很好吃，給你滿分！",
   },
   {
-    title: "2025/12/20 - 板橋居家時光",
+    title: "2025/12/20 - 楊聰恩家",
     image: twentyFirstImg,
-    description: "輕鬆溫馨的日常點滴。",
+    description: "騙我要玩switch，然後怎麼會忘記拍照呢？不愛了！可是謝謝你修了我的眉毛和鼻毛！我感受得到你的愛！",
   },
   {
-    title: "2025/12/21 - 冬至佳節",
+    title: "2025/12/21 - 冬至送幸福給楊聰恩",
     image: twentySecondImg,
-    description: "溫暖心房的冬至紀念。",
+    description: "這是第一次有一個女生來我家給我吃的，而且那個女生是我喜歡的！真的謝謝妳！",
   }
 ];
 
 const SlideshowPage = ({ onBackToMessage }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isPlaying, setIsPlaying] = useState(true);
+  const [isPlaying, setIsPlaying] = useState(false);
   const [direction, setDirection] = useState(1);
 
   // Preload Images
